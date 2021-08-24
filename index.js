@@ -38,14 +38,24 @@ router.get("/", (req, res) => {
         ],
         { encoding: "cp857", size: [1, 1] } // Optional
       )
-      .qrimage("https://github.com/song940/node-escpos", function (err) {
-        if (err) {
-          throw err;
-        }
-        printer.cut();
-        printer.close();
-        res.json("hihi");
-      });
+      .cut()
+      .close();
+      
+      printer.cut();
+      printer.close();
+      
+      res.json("hihi");
+      // .qrimage("https://github.com/song940/node-escpos", function (err) {
+      //   if (err) {
+      //     throw err;
+      //   }
+
+      // printer.cut();
+      // printer.close();
+      // res.json("hihi");
+       
+      // });
+
   });
 });
 
