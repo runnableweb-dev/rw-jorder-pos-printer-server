@@ -42,8 +42,8 @@ router.get("/", (req, res) => {
         if (err) {
           throw err;
         }
-        this.cut();
-        this.close();
+        printer.cut();
+        printer.close();
         res.json("hihi");
       });
   });
