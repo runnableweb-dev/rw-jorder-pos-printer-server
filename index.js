@@ -30,8 +30,7 @@ router.get("/", (req, res) => {
       .size(1, 1)
       .text("The quick brown fox jumps over the lazy dog")
       .text("敏捷的棕色狐狸跳过懒狗")
-      .text("אחד שתיים שלוש")
-      .text("\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8A")
+      .text("אחד שתיים שלוש", "Hebrew")
       .barcode("1234567", "EAN8")
       .table(["One", "Two", "Three"])
       .tableCustom(
