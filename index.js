@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 
   // todo to change encoding to supprot hebrew
   // const options = { encoding: "GB18030" /* default */ };
-  const options = { encoding: "hebrew" };
+  const options = { encoding: "Hebrew" };
   
   const printer = new escpos.Printer(device, options);
 
