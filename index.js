@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
   const device = new escpos.Network("192.168.1.23", 9100);
 
   // todo to change encoding to supprot hebrew
-  const options = { encoding: "WPC1255" /* default */ };
+  const options = { encoding: "WPC1255(Israel)" /* default */ };
   // const options = { encoding: "Hebrew" };
   
   const printer = new escpos.Printer(device, options);
