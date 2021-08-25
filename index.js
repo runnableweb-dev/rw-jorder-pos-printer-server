@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
       .align("ct")
       .style("bu")
       .size(1, 1)
-      .text("אחד שתיים שלוש")
+      .text("אחד שתיים שלוש", "Hebrew")
       // .text("The quick brown fox jumps over the lazy dog")
       // .text("敏捷的棕色狐狸跳过懒狗")
       // .barcode("1234567", "EAN8")
@@ -43,6 +43,7 @@ router.get("/", (req, res) => {
       //   { encoding: "cp857", size: [1, 1] } // Optional
       // )
       .cut()
+      .feed(3)
       .close();
       
       res.json("hihi");
