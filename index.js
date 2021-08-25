@@ -29,29 +29,25 @@ router.get("/", (req, res) => {
       .align("ct")
       .style("bu")
       .size(1, 1)
-      .text("The quick brown fox jumps over the lazy dog")
-      .text("敏捷的棕色狐狸跳过懒狗")
       .text("אחד שתיים שלוש")
-      .barcode("1234567", "EAN8")
-      .table(["One", "Two", "Three"])
-      .tableCustom(
-        [
-          { text: "Left", align: "LEFT", width: 0.33, style: "B" },
-          { text: "Center", align: "CENTER", width: 0.33 },
-          { text: "Right", align: "RIGHT", width: 0.33 },
-        ],
-        { encoding: "cp857", size: [1, 1] } // Optional
-      )
+      // .text("The quick brown fox jumps over the lazy dog")
+      // .text("敏捷的棕色狐狸跳过懒狗")
+      // .barcode("1234567", "EAN8")
+      // .table(["One", "Two", "Three"])
+      // .tableCustom(
+      //   [
+      //     { text: "Left", align: "LEFT", width: 0.33, style: "B" },
+      //     { text: "Center", align: "CENTER", width: 0.33 },
+      //     { text: "Right", align: "RIGHT", width: 0.33 },
+      //   ],
+      //   { encoding: "cp857", size: [1, 1] } // Optional
+      // )
       .cut()
       .close();
       
-      printer.cut();
-      printer.close();
-
-      
       res.json("hihi");
     } catch(err) {
-      console.log(`actual printing error: `); console.log(error);
+      console.log(`actual printing error: `); console.log(err);
       res.status(500).json(err);
     }
       // .qrimage("https://github.com/song940/node-escpos", function (err) {
