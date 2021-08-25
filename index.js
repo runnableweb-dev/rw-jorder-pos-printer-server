@@ -12,8 +12,8 @@ router.get("/", (req, res) => {
   const device = new escpos.Network("192.168.1.23", 9100);
 
   // todo to change encoding to supprot hebrew
-  // const options = { encoding: "GB18030" /* default */ };
-  const options = { encoding: "Hebrew" };
+  const options = { encoding: "GB18030" /* default */ };
+  // const options = { encoding: "Hebrew" };
   
   const printer = new escpos.Printer(device, options);
 
@@ -30,7 +30,7 @@ router.get("/", (req, res) => {
       .size(1, 1)
       .text("The quick brown fox jumps over the lazy dog")
       .text("敏捷的棕色狐狸跳过懒狗")
-      .text("אחד שתיים שלוש", "Hebrew")
+      .text("אחד שתיים שלוש")
       .barcode("1234567", "EAN8")
       .table(["One", "Two", "Three"])
       .tableCustom(
