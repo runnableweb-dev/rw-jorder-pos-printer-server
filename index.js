@@ -11,8 +11,10 @@ app.use("/", router);
 router.get("/", (req, res) => {
   const device = new escpos.Network("192.168.1.23", 9100);
 
-  const options = { encoding: "GB18030" /* default */ };
-
+  // todo to change encoding to supprot hebrew
+  // const options = { encoding: "GB18030" /* default */ };
+  const options = { encoding: "Hebrew" /* default */ };
+  
   const printer = new escpos.Printer(device, options);
 
   device.open(function (error) {
