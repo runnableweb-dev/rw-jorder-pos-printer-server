@@ -18,11 +18,12 @@ router.get("/", (req, res) => {
   const printer = new escpos.Printer(device, options);
 
   device.open(function (error) {
-    console.log(`### reached`);
     if (error) {
-      throw error;
+      console.log(`device opening error`);
+      console.log(error);
+      return;
     }
-
+    try {
     printer
       .font("a")
       .align("ct")
@@ -46,8 +47,13 @@ router.get("/", (req, res) => {
       
       printer.cut();
       printer.close();
+
       
       res.json("hihi");
+    } catch(err) {
+      console.log(`actual printing error: `); console.log(error);
+      res.status(500).json(err);
+    }
       // .qrimage("https://github.com/song940/node-escpos", function (err) {
       //   if (err) {
       //     throw err;
